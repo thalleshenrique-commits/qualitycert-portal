@@ -20,13 +20,13 @@ button,input,select{font:inherit}a{color:inherit}.app{display:grid;grid-template
 /* Escola v3 - leitor de aula completo */
 .studyView{max-width:1280px;margin:0 auto}.studyTop{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:18px}.studyTop h1{font-size:34px;margin:8px 0}.studyTop p{color:var(--mut);max-width:820px;line-height:1.6}.studyShell{display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px;align-items:start}.studyAside{position:sticky;top:88px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;max-height:calc(100vh - 110px);overflow:auto}.studyAside h3{margin:2px 0 12px}.studyIndex button{width:100%;text-align:left;border:0;background:transparent;padding:9px 10px;border-radius:9px;color:#5a4d60;cursor:pointer;font-size:12px}.studyIndex button:hover{background:#f3edf6;color:var(--p)}.studyMain{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:0 8px 25px #4d2a660c}.studyMain h2{font-size:27px;margin:30px 0 10px;color:#3c174f}.studyMain h3{font-size:19px;margin:24px 0 8px;color:var(--p)}.studyMain p,.studyMain li{font-size:15px;line-height:1.72;color:#443b49}.studyMain li{margin:7px 0}.studyLead{font-size:18px!important;color:#5e5664!important;line-height:1.65!important}.studyLabel{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--p);text-transform:uppercase}.conceptGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.conceptCard{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fbf9fc}.conceptCard b{display:block;color:#4a1d6d;margin-bottom:5px}.caseBox{padding:18px;border-radius:14px;background:#f4eef8;border-left:5px solid var(--p);margin:22px 0}.caseBox h3{margin-top:0}.officialBox{padding:18px;border-radius:14px;background:#edf5fb;border-left:5px solid #3778a8;margin:22px 0}.officialBox h3{margin-top:0;color:#285e91}.practiceBox{padding:18px;border-radius:14px;background:#eef8f3;border-left:5px solid var(--ok);margin:22px 0}.practiceBox h3{margin-top:0;color:#276b52}.sourceList{margin-top:28px;padding:18px;border:1px solid #d9e6ef;border-radius:14px;background:#f8fbfd}.sourceList a{color:#285e91}.studyFooter{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}.lessonCount{font-size:12px;color:var(--mut)}@media(max-width:900px){.studyShell{grid-template-columns:1fr}.studyAside{position:relative;top:auto;max-height:none}.studyMain{padding:22px}.conceptGrid{grid-template-columns:1fr}.studyTop{display:block}}
 </style>
-</head>
+<script src="config.js"></script><script src="auth-guard.js"></script></head>
 <body>
 <div class="loginGate" id="loginGate">
   <div class="loginCard">
     <div class="loginBrand">QUALITYCERT</div>
     <h1>Escola Qualitycert</h1>
-    <p>Acesse sua trilha de estudo. Seu progresso e sua prova ficam separados dos demais perfis neste navegador.</p>
+    <p>Seu acesso agora é autenticado. Progresso, provas e notas são vinculados à sua conta.</p>
     <div class="loginGrid">
       <div class="field full"><label>Nome</label><input id="loginName" placeholder="Ex.: Ana Souza"></div>
       <div class="field"><label>Matrícula ou e-mail corporativo</label><input id="loginId" placeholder="Identificação única"></div>
@@ -34,7 +34,7 @@ button,input,select{font:inherit}a{color:inherit}.app{display:grid;grid-template
       <div class="field full"><label>Área</label><select id="loginArea"><option>Novato</option><option>Onboarding</option><option>Direta</option><option>Revenda</option><option>Lote</option><option>Fidelização</option><option>Atendimento</option><option>SST</option><option>Liderança</option></select></div>
     </div>
     <button class="btn" style="width:100%;margin-top:16px" onclick="loginUser()">Entrar na minha Escola</button>
-    <div class="privacyNote"><b>Privacidade desta versão:</b> o GitHub Pages é um site estático. Os dados ficam separados por perfil no navegador, mas ainda não existe autenticação corporativa central. Para uso oficial com acesso em qualquer computador e relatórios gerenciais privados, a próxima etapa é conectar um banco com login.</div>
+    <div class="privacyNote"><b>V5:</b> autenticação e histórico individual centralizados no Supabase.</div>
   </div>
 </div>
 
@@ -220,10 +220,10 @@ SST:{title:'Prova SST e Ecossistema',questions:[
 Liderança:{title:'Prova Liderança Operacional',questions:[
 {q:'Gestão de carteira deve priorizar:',a:['Impacto, risco e potencial','Quantidade de ligações apenas','Preço','Somente curva C'],c:0},{q:'Curva A em risco pede:',a:['Ação rápida e diagnóstico','Espera','Desconto automático','Mudança de AC'],c:0},{q:'BI e CRM juntos ajudam a:',a:['Ler comportamento e contexto','Substituir gestão','Eliminar contato','Emitir certificado'],c:0},{q:'Monitoria deve usar:',a:['Evidências observáveis','Preferência pessoal','Tempo de casa','Amizade'],c:0},{q:'Metas sem processo podem gerar:',a:['Pressão sem diagnóstico','Sempre boa performance','Segurança','Conformidade'],c:0},{q:'Retenção aprovada precisa de:',a:['Critério e acompanhamento','Apenas print','Sem histórico','Apenas preço'],c:0},{q:'No Lote, liderança deve olhar:',a:['Faturamento e sustentabilidade da recompra','Somente quantidade','Somente preço','Somente vendedor'],c:0},{q:'No Onboarding, indicador crítico é:',a:['Ativação/primeiro valor','Número de slides','Duração do Meet','Quantidade de e-mails'],c:0},{q:'Mudança regulatória deve ser:',a:['Traduzida em processo e treinamento','Ignorada','Tratada como boato','Usada sem fonte'],c:0},{q:'Feedback bom é:',a:['Específico, baseado em evidência e com ação','Genérico','Público por padrão','Sem próximo passo'],c:0}]}
 };
-let currentExam=null;
-let currentUser=null;
-let profileKey='';
-let progress={};
+var currentExam=null;
+var currentUser=null;
+var profileKey='';
+var progress={};
 function makeKey(id,pin){return btoa(unescape(encodeURIComponent((id||'').trim().toLowerCase()+'|'+pin))).replace(/=/g,'')}
 function progressStorage(){return 'qualitycert_school_progress_'+profileKey}
 function scoreStorage(){return 'qualitycert_school_scores_'+profileKey}
@@ -261,7 +261,7 @@ document.getElementById('lessonModal').onclick=e=>{if(e.target.id==='lessonModal
 function applyUser(){document.getElementById('userNameTop').textContent=currentUser.name;document.getElementById('userAreaTop').textContent=currentUser.area;document.getElementById('userAvatar').textContent=(currentUser.name||'Q').trim().charAt(0).toUpperCase();document.getElementById('trackRole').value=currentUser.area==='SST'?'Todos':currentUser.area;renderTracks('trackGrid',99,currentUser.area==='SST'?'Todos':currentUser.area);renderLibrary();renderUpdates();renderGloss();renderQuiz();updateAll();document.getElementById('loginGate').style.display='none'}
 function loginUser(){let name=document.getElementById('loginName').value.trim(),id=document.getElementById('loginId').value.trim(),pin=document.getElementById('loginPin').value.trim(),area=document.getElementById('loginArea').value;if(!name||!id||!/^[0-9]{4,6}$/.test(pin)){alert('Preencha nome, identificação e um PIN de 4 a 6 números.');return}profileKey=makeKey(id,pin);currentUser={name,id,area};sessionStorage.setItem('qualitycert_current_user',JSON.stringify({...currentUser,profileKey}));progress=JSON.parse(localStorage.getItem(progressStorage())||'{}');applyUser()}
 function logoutUser(){sessionStorage.removeItem('qualitycert_current_user');location.reload()}
-(function boot(){let u=sessionStorage.getItem('qualitycert_current_user');if(u){let x=JSON.parse(u);currentUser={name:x.name,id:x.id,area:x.area};profileKey=x.profileKey;progress=JSON.parse(localStorage.getItem(progressStorage())||'{}');applyUser()}else{renderLibrary();renderUpdates();renderGloss();updateAll()}})();
+(function boot(){renderLibrary();renderUpdates();renderGloss();updateAll()})();
 </script>
-</body>
+<script type="module" src="school-sync.js"></script></body>
 </html>
